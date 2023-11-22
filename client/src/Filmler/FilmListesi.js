@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 export default function FilmListesi(props) {
   return (
@@ -11,7 +12,7 @@ export default function FilmListesi(props) {
   }
 
 function FilmDetayları(props) {
-  const { title, director, metascore } = props.movie;
+  const {key, title, director, metascore } = props.movie;
 
   return (
     <div className="movie-card">
@@ -22,6 +23,8 @@ function FilmDetayları(props) {
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
       </div>
+
+      <Link to={`/film/${key}`}>click me</Link>
     </div>
   );
 }
